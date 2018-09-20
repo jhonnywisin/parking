@@ -1,0 +1,31 @@
+page-mensualidad {
+  ion-title{
+    text-align: center
+  }
+  .card{
+    margin-top: 10%;
+
+    .card-title {
+      margin-left: 17%;
+      position: absolute;
+      top: 23%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: whitesmoke;
+    }
+
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 38%;
+      left: 15%;
+      width: 100%;
+      color: white;
+    }
+  }
+
+  .btn{
+    margin-top: 10%;
+  }
+}

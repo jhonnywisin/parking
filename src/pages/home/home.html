@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Parqueadero Motomania</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card">
+  <ion-slides (ionSlideDidChange)="slideChanged();">
+    <ion-slide>
+      <ion-card>
+        <img src="assets/imgs/park.JPG"/>
+        <div class="card-title">Moto mania</div>
+        <div class="card-subtitle">Bienvenido a su app</div>
+      </ion-card>
+      <button ion-button color="light" block class="bnt" (click)="ingresar()" icon-start>
+        <ion-icon name="ios-log-in-outline"></ion-icon>
+          Ingresar
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

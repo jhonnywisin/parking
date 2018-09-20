@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Buscar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-slides (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <ion-searchbar (ionInput)="getMotos($event)"></ion-searchbar>
+      <ion-list>
+        <button ion-item *ngFor="let item of placas" (click)="getdatos(item)">
+          {{item}}
+        </button>
+      </ion-list>
+      <button ion-button block color="light" (click)="actualizarLista();" icon-start>
+        <ion-icon name="md-refresh"></ion-icon>
+          Actualizar
+        </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

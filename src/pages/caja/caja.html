@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Caja</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-slides (ionSlideDidChange)="slideChanged();">
+    <ion-slide>
+      <img src= "assets/imgs/caja.jpg"/>
+      <ion-item class="texto">
+        <ion-label>Saldo Total:  </ion-label>
+        <ion-label>$  {{caja}}</ion-label>
+      </ion-item>
+      <button ion-button color="danger" block icon-start (click)="reiniciar();" class="btn">
+        <ion-icon name="ios-warning-outline"></ion-icon>
+        Reiniciar
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

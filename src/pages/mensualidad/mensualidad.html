@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Mensualidad</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-slides (ionSlideDidChange)="slideChanged();">
+    <ion-slide>
+      <ion-card class="card">
+        <img src="assets/imgs/motos.jpg"/>
+        <div class="card-title">Mensualidades</div>
+        <div class="card-subtitle">Ingresa tu moto y gestiona tu mensualidad</div>
+      </ion-card>
+      <button ion-button block class="btn" color="light" icon-start (click)="ingresar();">
+        <ion-icon name="ios-log-in-outline"></ion-icon>
+        Ingresar</button>
+      <button ion-button block class="btn" color="light" icon-start (click)="gestion();">
+        <ion-icon name="md-menu"></ion-icon>
+        Gestionar</button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

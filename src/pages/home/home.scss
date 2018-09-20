@@ -1,0 +1,45 @@
+page-home {
+    ion-title{
+        text-align: center;
+    }
+    .bnt{
+        margin-top: 50px;
+    }
+    .bnt2{
+        margin-top: 20px;
+    }
+    .input{
+        width: 120px;
+        margin-left: 90px;
+        border:3px solid #000;
+        font-family: Arial; font-size: 20pt;
+    }
+    p{
+        text-align: center;
+        font-family: Arial;
+    }
+    .card{
+      margin-top: 20px;
+      ion-card {
+       position: relative;
+       text-align: center;
+      }
+
+      .card-title {
+        position: absolute;
+        top: 10%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        color: white;
+      }
+    }
+}

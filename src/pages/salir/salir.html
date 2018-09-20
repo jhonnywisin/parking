@@ -1,0 +1,114 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content *ngIf="moto" class="contenido">
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Placa</ion-label>
+      <ion-input type="text" [(ngModel)]="placa" minlength="5" maxlength="6"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Marca</ion-label>
+      <ion-input type="text" *ngIf="id == 1 && buscar" [(ngModel)]="moto.marca"></ion-input>
+      <ion-select [(ngModel)]="marca" *ngIf="id != 1">
+        <ion-option *ngFor="let item of marcaMotos">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Linea</ion-label>
+      <ion-input type="text" *ngIf="id == 1 && buscar"[(ngModel)]="moto.linea"></ion-input>
+
+      <ion-select [(ngModel)]="linea" *ngIf="id != 1 && marca != null && marca == 'Yamaha'">
+        <ion-option *ngFor="let item of yamaha">{{item}}</ion-option>
+      </ion-select>
+
+      <ion-select [(ngModel)]="linea" *ngIf="id != 1 && marca != null && marca == 'Honda'">
+        <ion-option *ngFor="let item of honda">{{item}}</ion-option>
+      </ion-select>
+
+      <ion-select [(ngModel)]="linea" *ngIf="id != 1 && marca != null && marca == 'Suzuki'">
+        <ion-option *ngFor="let item of suzuki">{{item}}</ion-option>
+      </ion-select>
+
+      <ion-select [(ngModel)]="linea" *ngIf="id != 1 && marca != null && marca == 'AKT'">
+        <ion-option *ngFor="let item of akt">{{item}}</ion-option>
+      </ion-select>
+
+      <ion-select [(ngModel)]="linea" *ngIf="id != 1 && marca != null && marca == 'Auteco'">
+        <ion-option *ngFor="let item of auteco">{{item}}</ion-option>
+      </ion-select>
+
+      <ion-select [(ngModel)]="linea" *ngIf="id != 1 && marca != null && marca == 'Hero'">
+        <ion-option *ngFor="let item of hero">{{item}}</ion-option>
+      </ion-select>
+
+      <ion-select [(ngModel)]="linea" *ngIf="id != 1 && marca != null && marca == 'TVS'">
+        <ion-option *ngFor="let item of tvs">{{item}}</ion-option>
+      </ion-select>
+
+      <ion-input type="text" *ngIf="id != 1 && marca != null && marca == 'Otro'"  [(ngModel)]="linea"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Color</ion-label>
+      <ion-input type="text" *ngIf="id == 1 && buscar"[(ngModel)]="moto.color"></ion-input>
+      <ion-select [(ngModel)]="color" *ngIf="id != 1">
+        <ion-option *ngFor="let item of colores">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Cascos</ion-label>
+      <ion-input type="text" *ngIf="id == 1 && buscar"[(ngModel)]="moto.cascos"></ion-input>
+      <ion-select  [(ngModel)]="cascos" *ngIf="id != 1">
+        <ion-option *ngFor="let item of casco">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input type="text" *ngIf="id == 3"[(ngModel)]="nombre"></ion-input>
+      <ion-select  [(ngModel)]="cascos" *ngIf="id == 4">
+        <ion-option *ngFor="let item of casco">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Telefono</ion-label>
+      <ion-input type="number" *ngIf="id == 3"[(ngModel)]="tel"></ion-input>
+      <ion-select  [(ngModel)]="cascos" *ngIf="id == 4">
+        <ion-option *ngFor="let item of casco">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="id == 1 && buscar">
+      <ion-label floating>Hora de ingreso</ion-label>
+      <ion-input type="text" [(ngModel)]="horasalida"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{tituloHora}}</ion-label>
+      <ion-label >{{formatoHora}}</ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="id == 1 && buscar">
+      <ion-label>Saldo</ion-label>
+      <ion-label >{{saldo}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="light" (click)="btnBuscar()" block *ngIf="id == 1 && buscar == false"> buscar</button>
+  <button ion-button color="light" (click)="guarda()"    block *ngIf="id != 1" icon-start>
+    <ion-icon name="ios-add-outline"></ion-icon>
+    Guardar
+  </button>
+  <button ion-button color="light" (click)="cobra()"     block *ngIf="id == 1 && buscar" icon-start>
+    <ion-icon name="ios-cash-outline"></ion-icon>
+    Cobrar
+  </button>
+</ion-content>
